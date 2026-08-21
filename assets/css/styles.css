@@ -192,6 +192,7 @@ a {
 /* Buttons */
 .btn {
   display: inline-block;
+  text-align: center;
   padding: 13px 22px;
   border-radius: 999px;
   font-weight: 600;
