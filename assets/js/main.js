@@ -55,3 +55,15 @@ function initCarousel(root) {
 }
 
 document.querySelectorAll(".carousel").forEach(initCarousel);
+
+const mapLoadBtn = document.getElementById("map-load-btn");
+mapLoadBtn?.addEventListener("click", () => {
+  const wrap = document.getElementById("map-embed");
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://www.google.com/maps?q=Hermann-Rothert-Str.+7,+33335+G%C3%BCtersloh&output=embed";
+  iframe.loading = "lazy";
+  iframe.referrerPolicy = "no-referrer-when-downgrade";
+  iframe.title = "Google Maps: Hermann-Rothert-Str. 7, 33335 Gütersloh";
+  wrap.innerHTML = "";
+  wrap.appendChild(iframe);
+});
