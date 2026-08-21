@@ -1,3 +1,18 @@
+const navToggle = document.getElementById("nav-toggle");
+const siteNav = document.getElementById("site-nav");
+
+navToggle?.addEventListener("click", () => {
+  const isOpen = siteNav.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+siteNav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    siteNav.classList.remove("open");
+    navToggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
 function initCarousel(root) {
   const track = root.querySelector(".carousel-track");
   const slides = Array.from(root.querySelectorAll(".carousel-slide"));
@@ -57,21 +72,25 @@ function initCarousel(root) {
 document.querySelectorAll(".carousel").forEach(initCarousel);
 
 function loadInstagramEmbedScript(onReady) {
-  if (window.instgrm) {
-    onReady();
-    return;
+  if (!document.getElementById("ig-embed-script")) {
+    const script = document.createElement("script");
+    script.id = "ig-embed-script";
+    script.async = true;
+    script.src = "https://www.instagram.com/embed.js";
+    document.body.appendChild(script);
   }
-  const existing = document.getElementById("ig-embed-script");
-  if (existing) {
-    existing.addEventListener("load", onReady, { once: true });
-    return;
-  }
-  const script = document.createElement("script");
-  script.id = "ig-embed-script";
-  script.async = true;
-  script.src = "https://www.instagram.com/embed.js";
-  script.addEventListener("load", onReady, { once: true });
-  document.body.appendChild(script);
+  const startedAt = Date.now();
+  (function poll() {
+    if (window.instgrm) {
+      onReady();
+      return;
+    }
+    if (Date.now() - startedAt > 8000) {
+      onReady(new Error("timeout"));
+      return;
+    }
+    window.setTimeout(poll, 150);
+  })();
 }
 
 document.querySelectorAll(".ig-feed-card").forEach((card) => {
@@ -79,8 +98,12 @@ document.querySelectorAll(".ig-feed-card").forEach((card) => {
   btn?.addEventListener("click", () => {
     const url = card.dataset.igUrl;
     card.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>`;
-    loadInstagramEmbedScript(() => {
-      window.instgrm?.Embeds?.process();
+    loadInstagramEmbedScript((err) => {
+      if (err || !window.instgrm) {
+        card.innerHTML = `<p class="ig-feed-fallback">Beitrag konnte nicht geladen werden (evtl. durch Tracking-Schutz im Browser blockiert).<br><a href="${url}" target="_blank" rel="noopener">Direkt auf Instagram ansehen</a></p>`;
+        return;
+      }
+      window.instgrm.Embeds.process();
     });
   });
 });
