@@ -518,61 +518,6 @@ a {
   text-decoration: none;
 }
 
-/* Instagram feed */
-.ig-feed {
-  padding: 56px 0;
-  background: var(--color-bg-alt);
-}
-
-.ig-feed-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.ig-feed-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: #fff;
-  box-shadow: var(--shadow);
-  min-height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.ig-feed-load-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: 2px solid var(--color-primary);
-  background: transparent;
-  color: var(--color-primary-dark);
-  cursor: pointer;
-}
-
-.ig-feed-load-btn:hover {
-  background: var(--color-primary);
-  color: #fff;
-}
-
-.ig-feed-card iframe {
-  width: 100%;
-}
-
-.ig-feed-fallback {
-  padding: 26px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
 /* Carousel */
 .gallery {
   padding: 56px 0;
@@ -814,8 +759,7 @@ a {
   }
   .audience-cards,
   .info-grid,
-  .tutorial-grid,
-  .ig-feed-grid {
+  .tutorial-grid {
     grid-template-columns: 1fr;
   }
   .notices ul {

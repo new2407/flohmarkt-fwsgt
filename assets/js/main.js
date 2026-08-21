@@ -71,63 +71,6 @@ function initCarousel(root) {
 
 document.querySelectorAll(".carousel").forEach(initCarousel);
 
-function loadInstagramEmbedScript(onReady) {
-  if (!document.getElementById("ig-embed-script")) {
-    const script = document.createElement("script");
-    script.id = "ig-embed-script";
-    script.async = true;
-    script.src = "https://www.instagram.com/embed.js";
-    document.body.appendChild(script);
-  }
-  const startedAt = Date.now();
-  (function poll() {
-    if (window.instgrm) {
-      onReady();
-      return;
-    }
-    if (Date.now() - startedAt > 8000) {
-      onReady(new Error("timeout"));
-      return;
-    }
-    window.setTimeout(poll, 150);
-  })();
-}
-
-function igFallback(card, url) {
-  card.innerHTML = `<p class="ig-feed-fallback">Beitrag konnte nicht geladen werden (oft durch Cookie-/Tracking-Schutz im Browser blockiert).<br><a href="${url}" target="_blank" rel="noopener">Direkt auf Instagram ansehen</a></p>`;
-}
-
-function watchEmbedRender(card, url) {
-  const startedAt = Date.now();
-  (function check() {
-    const iframe = card.querySelector("iframe");
-    if (iframe && iframe.getBoundingClientRect().height > 80) {
-      return;
-    }
-    if (Date.now() - startedAt > 4000) {
-      igFallback(card, url);
-      return;
-    }
-    window.setTimeout(check, 300);
-  })();
-}
-
-document.querySelectorAll(".ig-feed-card").forEach((card) => {
-  const btn = card.querySelector(".ig-feed-load-btn");
-  btn?.addEventListener("click", () => {
-    const url = card.dataset.igUrl;
-    card.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>`;
-    loadInstagramEmbedScript((err) => {
-      if (err || !window.instgrm) {
-        igFallback(card, url);
-        return;
-      }
-      window.instgrm.Embeds.process();
-      watchEmbedRender(card, url);
-    });
-  });
-});
-
 const mapLoadBtn = document.getElementById("map-load-btn");
 mapLoadBtn?.addEventListener("click", () => {
   const wrap = document.getElementById("map-embed");
