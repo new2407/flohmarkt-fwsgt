@@ -56,6 +56,35 @@ function initCarousel(root) {
 
 document.querySelectorAll(".carousel").forEach(initCarousel);
 
+function loadInstagramEmbedScript(onReady) {
+  if (window.instgrm) {
+    onReady();
+    return;
+  }
+  const existing = document.getElementById("ig-embed-script");
+  if (existing) {
+    existing.addEventListener("load", onReady, { once: true });
+    return;
+  }
+  const script = document.createElement("script");
+  script.id = "ig-embed-script";
+  script.async = true;
+  script.src = "https://www.instagram.com/embed.js";
+  script.addEventListener("load", onReady, { once: true });
+  document.body.appendChild(script);
+}
+
+document.querySelectorAll(".ig-feed-card").forEach((card) => {
+  const btn = card.querySelector(".ig-feed-load-btn");
+  btn?.addEventListener("click", () => {
+    const url = card.dataset.igUrl;
+    card.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>`;
+    loadInstagramEmbedScript(() => {
+      window.instgrm?.Embeds?.process();
+    });
+  });
+});
+
 const mapLoadBtn = document.getElementById("map-load-btn");
 mapLoadBtn?.addEventListener("click", () => {
   const wrap = document.getElementById("map-embed");
