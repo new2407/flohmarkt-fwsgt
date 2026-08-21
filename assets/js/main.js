@@ -93,6 +93,25 @@ function loadInstagramEmbedScript(onReady) {
   })();
 }
 
+function igFallback(card, url) {
+  card.innerHTML = `<p class="ig-feed-fallback">Beitrag konnte nicht geladen werden (oft durch Cookie-/Tracking-Schutz im Browser blockiert).<br><a href="${url}" target="_blank" rel="noopener">Direkt auf Instagram ansehen</a></p>`;
+}
+
+function watchEmbedRender(card, url) {
+  const startedAt = Date.now();
+  (function check() {
+    const iframe = card.querySelector("iframe");
+    if (iframe && iframe.getBoundingClientRect().height > 80) {
+      return;
+    }
+    if (Date.now() - startedAt > 4000) {
+      igFallback(card, url);
+      return;
+    }
+    window.setTimeout(check, 300);
+  })();
+}
+
 document.querySelectorAll(".ig-feed-card").forEach((card) => {
   const btn = card.querySelector(".ig-feed-load-btn");
   btn?.addEventListener("click", () => {
@@ -100,10 +119,11 @@ document.querySelectorAll(".ig-feed-card").forEach((card) => {
     card.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14" style="margin:0; width:100%;"></blockquote>`;
     loadInstagramEmbedScript((err) => {
       if (err || !window.instgrm) {
-        card.innerHTML = `<p class="ig-feed-fallback">Beitrag konnte nicht geladen werden (evtl. durch Tracking-Schutz im Browser blockiert).<br><a href="${url}" target="_blank" rel="noopener">Direkt auf Instagram ansehen</a></p>`;
+        igFallback(card, url);
         return;
       }
       window.instgrm.Embeds.process();
+      watchEmbedRender(card, url);
     });
   });
 });
