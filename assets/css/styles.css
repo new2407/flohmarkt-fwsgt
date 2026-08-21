@@ -4,7 +4,7 @@
   --color-text: #2e2a26;
   --color-text-muted: #6b6259;
   --color-primary: #d8712f;
-  --color-primary-dark: #b85a20;
+  --color-primary-dark: #a04c19;
   --color-secondary: #3f7a5c;
   --color-secondary-dark: #2f5d45;
   --color-border: #e6dccb;
@@ -31,6 +31,13 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 img {
@@ -163,23 +170,54 @@ a {
   margin-bottom: 20px;
 }
 
+.icon-svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.hero-facts .icon-svg {
+  color: var(--color-secondary-dark);
+}
+
+.icon-svg-lg {
+  width: 22px;
+  height: 22px;
+}
+
+.deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #f6e3d3;
+  color: var(--color-primary-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 0 18px;
+}
+
+.deadline-badge .icon-svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary-dark);
+}
+
 .hero-facts {
   list-style: none;
   padding: 0;
   margin: 0 0 26px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   font-size: 1rem;
 }
 
 .hero-facts li {
   display: flex;
+  align-items: center;
   gap: 10px;
-}
-
-.hero-facts .icon {
-  flex-shrink: 0;
 }
 
 .hero-image {
@@ -685,19 +723,21 @@ a {
 .map-load-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 22px;
+  gap: 10px;
+  padding: 15px 26px;
   border-radius: 999px;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
   border: 2px solid var(--color-primary);
-  background: transparent;
-  color: var(--color-primary-dark);
+  background: var(--color-primary);
+  color: #fff;
   cursor: pointer;
+  box-shadow: var(--shadow);
 }
 
 .map-load-btn:hover {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
   color: #fff;
 }
 
