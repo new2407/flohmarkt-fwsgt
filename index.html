@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flohmarkt Waldorfschule Gütersloh – 25./26. September 2026</title>
+<meta name="description" content="Vorsortierter Flohmarkt in der Waldorfschule Gütersloh: Kleidung, Spielzeug und mehr. Infos für Käufer und Anmeldung für Verkäufer." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <p class="site-title">Flohmarkt&nbsp;FWS&nbsp;GT</p>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Menü öffnen</span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <a href="#verkaeufer-kaeufer">Anmeldung</a>
+      <a href="#tutorials">Tutorials</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <p class="kicker">Organisiert von der Elterninitiative der Waldorfschule Gütersloh</p>
+      <h1>Vorsortierter Flohmarkt in der Waldorfschule Gütersloh</h1>
+      <p class="subtitle">Kleidung für Kinder ab Größe&nbsp;110, für Erwachsene und Spielzeug.</p>
+      <p class="deadline-badge">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15.5 14"></polyline></svg>
+        Wir haben innerhalb von 24h alle Plätze belegt. Eine Anmeldung ist nur noch für die Warteliste möglich.
+      </p>
+      <ul class="hero-facts">
+        <li>
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Freitag, 25.09.2026, 18:30–20:30 Uhr &amp; Samstag, 26.09.2026, 11:00–13:00 Uhr
+        </li>
+        <li>
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Hermann-Rothert-Str. 7, 33335 Gütersloh
+        </li>
+        <li>
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>
+          Mit leckeren herzhaften und süßen Speisen vor Ort
+        </li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#verkaeufer-kaeufer">Ich möchte verkaufen</a>
+        <a class="btn btn-secondary" href="#kaeufer-info">Ich möchte einkaufen</a>
+        <a class="btn btn-outline" href="assets/flyer.pdf" target="_blank" rel="noopener">Flyer als PDF</a>
+      </div>
+    </div>
+    <a class="hero-image" href="assets/flyer.pdf" target="_blank" rel="noopener">
+      <img src="assets/img/flyer.jpg" alt="Flyer zum Flohmarkt in der Waldorfschule Gütersloh" />
+    </a>
+    <!-- TODO: echtes Foto vom Flohmarkt/der Schule hier (statt/neben Flyer-Grafik) einfügen, sobald verfügbar -->
+  </div>
+</section>
+
+<section class="map-section" id="anfahrt">
+  <div class="container">
+    <h2 class="section-title">Anfahrt</h2>
+    <p class="section-lead">Hermann-Rothert-Str. 7, 33335 Gütersloh</p>
+    <div class="map-embed" id="map-embed">
+      <button type="button" class="map-load-btn" id="map-load-btn">
+        <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Karte laden
+      </button>
+      <p class="map-hint">
+        Beim Laden wird eine Verbindung zu Google Maps aufgebaut (Google kann dabei Daten erheben).
+        Alternativ:
+        <a href="https://www.google.com/maps/search/?api=1&query=Hermann-Rothert-Str.+7,+33335+G%C3%BCtersloh" target="_blank" rel="noopener">direkt in Google Maps öffnen</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="audience" id="verkaeufer-kaeufer">
+  <div class="container">
+    <h2 class="section-title">Verkäufer &amp; Käufer</h2>
+    <div class="audience-cards">
+
+      <div class="audience-card">
+        <span class="badge badge-seller">Verkäufer</span>
+        <h3>Selbst verkaufen</h3>
+        <p>
+          <s>Anmeldezeitraum: <strong>28.08.–04.09.2026</strong>.</s> Rückmeldungen ab dem <strong>11.09.2026</strong>.
+          Die Anmeldung läuft ausschließlich über das Online-Formular – Anmeldungen per E-Mail
+          können leider nicht berücksichtigt werden.
+        </p>
+        <div class="card-btn-stack">
+          <span class="btn btn-disabled" aria-disabled="true">
+            Zum Anmeldeformular
+          </span>
+          <a class="btn btn-primary" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__Q2rqFhUMDNKTlNaVUxXSloxRFZZTEVRQ04yQzFOQS4u&origin=QRCode" target="_blank" rel="noopener">
+            Anmeldung Warteliste
+          </a>
+          <a class="btn btn-outline" href="https://ebbchl.s.gy/AGB_092026" target="_blank" rel="noopener">
+            Bedingungen für Verkäufer
+          </a>
+        </div>
+      </div>
+
+      <div class="audience-card" id="kaeufer-info">
+        <span class="badge badge-buyer">Käufer</span>
+        <h3>Stöbern &amp; einkaufen</h3>
+        <p>
+          Keine Anmeldung nötig – einfach vorbeikommen! Geöffnet freitags von 18:30–20:30 Uhr
+          und samstags von 11:00–13:00 Uhr in der Waldorfschule Gütersloh. Für den kleinen Hunger
+          zwischendurch gibt es herzhafte und süße Speisen vor Ort.
+        </p>
+        <a class="btn btn-secondary" href="#fotos">Impressionen ansehen</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section">
+  <div class="container">
+    <p class="timeline-lead">Seit 2024 im Halbjahrestakt – dieses Mal schon zum fünften Mal:</p>
+    <ol class="timeline">
+      <li><span class="timeline-label">September 2024</span></li>
+      <li><span class="timeline-label">März 2025</span></li>
+      <li><span class="timeline-label">September 2025</span></li>
+      <li><span class="timeline-label">März 2026</span></li>
+      <li class="current"><span class="timeline-label">September 2026</span></li>
+      <li class="upcoming"><span class="timeline-label">Frühjahr 2027 (in Planung)</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="info">
+  <div class="container">
+    <h2 class="section-title">Gut zu wissen</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Wichtige Hinweise</h3>
+        <ul>
+          <li>Keine Handtaschen / Rucksäcke größer als DIN&nbsp;A4</li>
+          <li>Freitags keine Kinderwagen / Buggys</li>
+          <li>Kontrollen möglich</li>
+          <li>Bringt gerne eine leere, große Einkaufstasche mit</li>
+          <li>Bitte die Parkplatz-Beschilderung vor Ort beachten</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Veranstalter &amp; Kontakt</h3>
+        <p class="organizer-line">
+          <strong>Veranstaltet von der Elterninitiative der Waldorfschule Gütersloh</strong>
+        </p>
+        <ul>
+          <li>Rückfragen: <a href="mailto:flohmarkt-fwsgt@gmx.de">flohmarkt-fwsgt@gmx.de</a></li>
+          <li style="list-style: none; margin-left: -18px;">
+            <a class="ig-link" href="https://www.instagram.com/flohmarkt.fwsgt/" target="_blank" rel="noopener">
+              <svg class="ig-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.16-.56.55-.9 1.11-1.16 1.77-.25.64-.42 1.37-.47 2.43C2 8.94 2 9.28 2 12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.16 1.77.55.56 1.11.9 1.77 1.16.64.25 1.37.42 2.43.47C8.94 22 9.28 22 12 22s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.16.56-.55.9-1.11 1.16-1.77.25-.64.42-1.37.47-2.43C22 15.06 22 14.72 22 12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.43-.26-.66-.6-1.22-1.16-1.77-.55-.56-1.11-.9-1.77-1.16-.64-.25-1.37-.42-2.43-.47C15.06 2 14.72 2 12 2zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.21 1.85.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.13.36.29.87.34 1.85.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.21 1.5-.34 1.85-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.36.13-.87.29-1.85.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.21-1.85-.34-.47-.18-.8-.4-1.15-.75-.35-.35-.57-.68-.75-1.15-.13-.36-.29-.87-.34-1.85C3.8 14.99 3.8 14.67 3.8 12s.01-2.99.06-4.04c.04-.98.21-1.5.34-1.85.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.36-.13.87-.29 1.85-.34C9.01 3.8 9.33 3.8 12 3.8zm0 3.05a5.15 5.15 0 1 0 0 10.3 5.15 5.15 0 0 0 0-10.3zm0 8.5a3.35 3.35 0 1 1 0-6.7 3.35 3.35 0 0 1 0 6.7zm5.35-8.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+              @flohmarkt.fwsgt
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tutorials" id="tutorials">
+  <div class="container">
+    <h2 class="section-title">Tutorials für Verkäufer</h2>
+    <p class="section-lead">Kurze Instagram-Videos mit Tipps rund um den Verkauf – die Videos werden aktuell noch gedreht und folgen in Kürze.</p>
+    <div class="tutorial-grid">
+
+      <article class="tutorial-card">
+        <div class="tutorial-thumb">
+          <span class="coming-soon">Video folgt in Kürze</span>
+          <span class="play-icon">▶</span>
+        </div>
+        <div class="tutorial-body">
+          <h3>Kleidung richtig verpacken</h3>
+          <p>Wie ihr eure Kleidungsstücke und Sets für den Verkauf am besten zusammenstellt und verpackt.</p>
+        </div>
+      </article>
+
+      <article class="tutorial-card">
+        <div class="tutorial-thumb">
+          <span class="coming-soon">Video folgt in Kürze</span>
+          <span class="play-icon">▶</span>
+        </div>
+        <div class="tutorial-body">
+          <h3>Etiketten richtig erstellen</h3>
+          <p>So beschriftet ihr eure Artikel korrekt mit Größe, Preis und Verkäufernummer.</p>
+        </div>
+      </article>
+
+      <article class="tutorial-card">
+        <div class="tutorial-thumb">
+          <span class="coming-soon">Video folgt in Kürze</span>
+          <span class="play-icon">▶</span>
+        </div>
+        <div class="tutorial-body">
+          <h3>Allgemeine Verkaufstipps</h3>
+          <p>Weitere Tipps rund um euren erfolgreichen Verkaufsstart beim Flohmarkt.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="fotos">
+  <div class="container">
+    <h2 class="section-title">Was euch erwartet</h2>
+    <p class="section-lead">Ein Vorgeschmack darauf, was es beim Flohmarkt alles zu entdecken gibt.</p>
+
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-01.jpg" alt="Erwachsenenkleidung in den Größen XS–XL" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-02.jpg" alt="Innen shoppen, außen bei Wohlfühlambiente schlemmen" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-03.jpg" alt="Bücher & Deko für Erwachsene" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-04.jpg" alt="Tonies & Bücher" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-05.jpg" alt="Fahrräder, Roller, Spiele & Bücher" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-07.jpg" alt="Kinderbekleidung in den Größen 110–176" loading="lazy" />
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/img/carousel/foto-06.jpg" alt="Viele Kassen, schnelle Abwicklung" loading="lazy" />
+        </div>
+      </div>
+      <button class="carousel-nav prev" aria-label="Vorheriges Foto">&#8249;</button>
+      <button class="carousel-nav next" aria-label="Nächstes Foto">&#8250;</button>
+      <div class="carousel-dots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="container">
+    <h2 class="section-title">Fragen?</h2>
+    <p>
+      Schreibt uns eine E-Mail an <a href="mailto:flohmarkt-fwsgt@gmx.de">flohmarkt-fwsgt@gmx.de</a> oder folgt uns auf
+      <a class="ig-link" href="https://www.instagram.com/flohmarkt.fwsgt/" target="_blank" rel="noopener">
+        <svg class="ig-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.16-.56.55-.9 1.11-1.16 1.77-.25.64-.42 1.37-.47 2.43C2 8.94 2 9.28 2 12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.16 1.77.55.56 1.11.9 1.77 1.16.64.25 1.37.42 2.43.47C8.94 22 9.28 22 12 22s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.16.56-.55.9-1.11 1.16-1.77.25-.64.42-1.37.47-2.43C22 15.06 22 14.72 22 12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.43-.26-.66-.6-1.22-1.16-1.77-.55-.56-1.11-.9-1.77-1.16-.64-.25-1.37-.42-2.43-.47C15.06 2 14.72 2 12 2zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.21 1.85.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.13.36.29.87.34 1.85.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.21 1.5-.34 1.85-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.36.13-.87.29-1.85.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.21-1.85-.34-.47-.18-.8-.4-1.15-.75-.35-.35-.57-.68-.75-1.15-.13-.36-.29-.87-.34-1.85C3.8 14.99 3.8 14.67 3.8 12s.01-2.99.06-4.04c.04-.98.21-1.5.34-1.85.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.36-.13.87-.29 1.85-.34C9.01 3.8 9.33 3.8 12 3.8zm0 3.05a5.15 5.15 0 1 0 0 10.3 5.15 5.15 0 0 0 0-10.3zm0 8.5a3.35 3.35 0 1 1 0-6.7 3.35 3.35 0 0 1 0 6.7zm5.35-8.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+        @flohmarkt.fwsgt
+      </a>
+      auf Instagram.
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>&copy; 2026 Flohmarkt Waldorfschule Gütersloh – Elterninitiative</span>
+    <span>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
